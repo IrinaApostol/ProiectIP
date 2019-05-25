@@ -12,6 +12,7 @@
     <link href="codemirror/lib/codemirror.css" rel="stylesheet">
     <link href="codemirror/theme/dracula.css" rel="stylesheet">
     <script src="codemirror/mode/clike/clike.js"></script>
+
 </head>
 <body>
 
@@ -38,9 +39,9 @@
   </div>
 <jsp:useBean id="problem" scope="request" type="org.json.JSONObject"/>
 
-<form method = "POST">
-    
-        <h3>Enunt: ${problem.getString("statement")} </h3> <br> <br>
+<form method = "POST" style=" padding-left: 200px ; padding-right: 200px">
+    <br> <br>
+        <h3 style="font-family: Ubuntu;" >Enunt: ${problem.getString("statement")} </h3><br>
     <br>
     <table class="problemStyle">
         <tr>
@@ -48,14 +49,21 @@
             <th>Nume Problema</th>
             <th>Dificultate</th>
             <th>Categorie</th>
-            <th>Input</th>
-            <th>Output</th>
         </tr>
         <tr>
             <td> ${problem.getInt("id")}</td>
             <td> ${problem.getString("title")}</td>
             <td> ${problem.getString("difficulty")}</td>
             <td>${problem.getInt("category")}</td>
+        </tr>
+    </table><br>
+    <h3 style="font-family: Ubuntu;">Exemple: </h3><br>
+    <table class="problemStyle">
+        <tr>
+            <th>Input</th>
+            <th>Output</th>
+        </tr>
+        <tr>
             <td>${problem.getString("test_in")}</td>
             <td>${problem.getString("test_out")}</td>
         </tr>
